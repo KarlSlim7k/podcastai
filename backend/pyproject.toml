@@ -1,0 +1,25 @@
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --cov=app --cov-report=term-missing --cov-report=html:htmlcov --cov-fail-under=79"
+
+[tool.coverage.run]
+source = ["app"]
+omit = [
+    "tests/*",
+    "*/migrations/*",
+    "app/services/transcription_service.py",   # requires GPU/Whisper hardware
+    "app/services/audio_extractor.py",          # requires FFmpeg subprocess
+    "app/services/export_service.py",           # tested via e2e with mocks
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+]

@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply h-full;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply h-full bg-slate-950 text-slate-100 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  #root {
+    @apply h-full;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600;
+  }
+}
+
+@layer utilities {
+  .prose-invert :where(p):not(:where([class~="not-prose"] *)) {
+    @apply text-slate-300;
+  }
+
+  .prose-invert :where(h1,h2,h3,h4,h5,h6):not(:where([class~="not-prose"] *)) {
+    @apply text-white;
+  }
+
+  .prose-invert :where(ul,ol):not(:where([class~="not-prose"] *)) {
+    @apply text-slate-300;
+  }
+
+  .prose-invert :where(li):not(:where([class~="not-prose"] *)) {
+    @apply text-slate-300;
+  }
+
+  .prose-invert :where(code):not(:where([class~="not-prose"] *)) {
+    @apply bg-slate-800 text-brand-300 px-1 rounded text-xs;
+  }
+
+  .prose-invert :where(strong):not(:where([class~="not-prose"] *)) {
+    @apply text-white font-semibold;
+  }
+
+  .prose-invert :where(blockquote):not(:where([class~="not-prose"] *)) {
+    @apply border-brand-500/50 bg-brand-900/10 text-slate-300;
+  }
+
+  .prose-invert :where(hr):not(:where([class~="not-prose"] *)) {
+    @apply border-slate-700;
+  }
+}
+
+/* Tab content fade-in (Vertical Editor right panel) */
+@keyframes tabFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.tab-fade {
+  animation: tabFadeIn 200ms ease-out;
+}

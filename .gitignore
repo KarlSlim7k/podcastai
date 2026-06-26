@@ -1,0 +1,61 @@
+# ── Entorno Python ───────────────────────────────────────────────────────────
+backend/.venv/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+backend/.pytest_cache/
+backend/htmlcov/
+backend/.coverage
+backend/coverage.xml
+*.egg-info/
+
+# ── Dependencias Node ────────────────────────────────────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# ── Datos de usuario (DB, uploads, renders — nunca commitear) ────────────────
+backend/data/
+
+# ── Variables de entorno (pueden contener credenciales) ──────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── Logs generados por start.bat / start.sh ──────────────────────────────────
+logs_*.txt
+*.log
+
+# ── Scripts generados por versiones antiguas de install.ps1 ─────────────────
+start_backend.bat
+start_frontend.bat
+
+# ── Documentos internos de desarrollo (contexto IA, reportes) ───────────────
+INFORME_PRUEBAS.md
+COMMANDCODE.md
+
+# ── macOS ────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ── Windows ──────────────────────────────────────────────────────────────────
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ── IDEs y herramientas de desarrollo ────────────────────────────────────────
+.vscode/
+.idea/
+.claude/
+.commandcode/
+*.swp
+*.swo
+*.suo
+*.user
+*.userosscache
+*.sln.docstates

@@ -1,0 +1,19 @@
+# Normaliza line endings: LF en el repo, auto-conversión en checkout Windows
+* text=auto eol=lf
+
+# Shell scripts SIEMPRE deben tener LF (si tienen CRLF no ejecutan en Unix)
+*.sh text eol=lf
+*.bash text eol=lf
+
+# Binarios — sin conversión
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.mp4 binary
+*.mp3 binary
+*.wav binary
+*.gguf binary
+*.bin binary
+*.db binary
